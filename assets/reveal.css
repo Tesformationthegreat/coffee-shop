@@ -1,0 +1,6 @@
+/* Pairs with motion.js. Keep travel small (14px) and time short. Big slides
+   read as a template. */
+[data-hero], [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out); }
+[data-reveal-stagger] > * { opacity: 0; transform: translateY(12px); transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out); }
+[data-hero].is-in, [data-reveal].is-in, [data-reveal-stagger].is-in > * { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { [data-hero], [data-reveal], [data-reveal-stagger] > * { opacity: 1; transform: none; transition: none; } }

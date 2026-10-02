@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lowfield Coffee | Fresh roasted coffee beans, shipped weekly</title>
+  <meta name="description" content="Small-batch coffee beans for home brewers. Roasted every Monday, shipped every Wednesday, with the roast date printed on every bag. Buy a bag or subscribe.">
+  <link rel="canonical" href="https://lowfield.example/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lowfield Coffee | Roasted the week you drink it">
+  <meta property="og:description" content="Small-batch beans roasted every Monday and shipped every Wednesday. Roast date on every bag.">
+  <meta property="og:url" content="https://lowfield.example/">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#15100C">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2315100C'/%3E%3Cellipse cx='16' cy='16' rx='8' ry='11' fill='%23C38545' transform='rotate(25 16 16)'/%3E%3Cpath d='M12 7c5 5 3 13 8 18' stroke='%2315100C' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="stylesheet" href="assets/glass.css">
+  <link rel="stylesheet" href="assets/reveal.css">
+  <link rel="stylesheet" href="css/site.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://lowfield.example/#org",
+        "name": "Lowfield Coffee",
+        "url": "https://lowfield.example/",
+        "email": "hello@lowfield.example"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Lowfield Coffee",
+        "url": "https://lowfield.example/",
+        "publisher": { "@id": "https://lowfield.example/#org" }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Coffee beans",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "Long Table house blend", "description": "Brazil and Colombia blend. Milk chocolate, toasted almond, brown sugar.", "brand": { "@id": "https://lowfield.example/#org" }, "offers": { "@type": "Offer", "price": "18.00", "priceCurrency": "USD" } } },
+          { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Ethiopia Guji, washed", "description": "Single origin. Bergamot, peach, black tea.", "brand": { "@id": "https://lowfield.example/#org" }, "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "USD" } } },
+          { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "Colombia Huila", "description": "Single origin. Red apple, caramel, cocoa.", "brand": { "@id": "https://lowfield.example/#org" }, "offers": { "@type": "Offer", "price": "20.00", "priceCurrency": "USD" } } },
+          { "@type": "ListItem", "position": 4, "item": { "@type": "Product", "name": "Peru decaf, water process", "description": "Decaf. Dark chocolate, walnut, raisin.", "brand": { "@id": "https://lowfield.example/#org" }, "offers": { "@type": "Offer", "price": "19.00", "priceCurrency": "USD" } } }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "When will my coffee ship?", "acceptedAnswer": { "@type": "Answer", "text": "We roast every Monday and ship every Wednesday with tracking. Orders placed by Sunday at 11:59 pm go into that Monday's roast." } },
+          { "@type": "Question", "name": "Should I buy whole bean or ground?", "acceptedAnswer": { "@type": "Answer", "text": "Whole bean stays fresh longer. If you do not own a grinder, pick the grind for your brewer and we grind it on packing day." } },
+          { "@type": "Question", "name": "How long does the coffee stay fresh?", "acceptedAnswer": { "@type": "Answer", "text": "It tastes best between 7 and 30 days after the roast date printed on the bag. Keep it sealed in the bag, away from light and heat." } },
+          { "@type": "Question", "name": "Can I pause or cancel a subscription?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, with no fee. Email us before the Sunday cut-off. A self-serve account page is coming soon." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Shared bag drawing. Each product sets its own colours. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="bag" viewBox="0 0 160 220">
+      <rect x="22" y="4" width="116" height="20" rx="2" style="fill: var(--bag-top)"/>
+      <path d="M22 9h116M22 14h116M22 19h116" style="stroke: rgba(0,0,0,.18)" stroke-width="1"/>
+      <path d="M18 24h124l8 182q0 10-10 10H20q-10 0-10-10z" style="fill: var(--bag)"/>
+      <path d="M18 24h18l-6 192H20q-10 0-10-10z" style="fill: rgba(0,0,0,.14)"/>
+      <path d="M124 24h18l8 182q0 10-10 10h-8z" style="fill: rgba(255,255,255,.07)"/>
+      <circle cx="80" cy="48" r="6" fill="none" style="stroke: rgba(0,0,0,.28)" stroke-width="2"/>
+      <rect x="36" y="80" width="88" height="96" rx="2" style="fill: var(--label)"/>
+      <rect x="46" y="92" width="34" height="5" style="fill: var(--label-ink)"/>
+      <rect x="46" y="104" width="68" height="1.5" style="fill: var(--label-ink)" opacity=".7"/>
+      <rect x="46" y="114" width="62" height="10" style="fill: var(--label-ink)"/>
+      <rect x="46" y="130" width="44" height="4" style="fill: var(--label-ink)" opacity=".5"/>
+      <rect x="46" y="140" width="52" height="4" style="fill: var(--label-ink)" opacity=".5"/>
+      <rect x="46" y="156" width="68" height="12" fill="none" style="stroke: var(--label-ink)" stroke-width="1.2"/>
+    </symbol>
+  </svg>
+
+  <header class="nav" role="banner">
+    <a class="brand" href="#top" aria-label="Lowfield Coffee, back to top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="16" rx="8" ry="11" fill="#C38545" transform="rotate(25 16 16)"/><path d="M12 7c5 5 3 13 8 18" stroke="#15100C" stroke-width="2" fill="none"/></svg>
+      Lowfield Coffee
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Main">
+        <a href="#shop">Shop</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="#roast-week">Roast week</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="cart-btn" type="button" data-open-cart aria-controls="cart" aria-expanded="false">
+        Cart <span class="cart-count" data-cart-count>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero: hills at first light, sun low on the left, order card on the ground -->
+    <section id="top" class="hero band-dark grain ruled vignette" aria-labelledby="hero-title">
+      <div class="scene" aria-hidden="true">
+        <svg viewBox="0 0 1600 1000" preserveAspectRatio="xMinYMax slice">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#110C09"/>
+              <stop offset=".45" stop-color="#1D140E"/>
+              <stop offset=".66" stop-color="#4A2C17"/>
+              <stop offset="1" stop-color="#1A120C"/>
+            </linearGradient>
+            <radialGradient id="sun" cx="230" cy="640" r="900" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#F0B26E" stop-opacity=".75"/>
+              <stop offset=".25" stop-color="#C77A3C" stop-opacity=".35"/>
+              <stop offset=".6" stop-color="#6B3E1E" stop-opacity=".08"/>
+              <stop offset="1" stop-color="#6B3E1E" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="rim" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#F2BF84" stop-opacity=".85"/>
+              <stop offset=".45" stop-color="#E0A060" stop-opacity=".25"/>
+              <stop offset="1" stop-color="#E0A060" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#000" stop-opacity="0"/>
+              <stop offset="1" stop-color="#000" stop-opacity=".45"/>
+            </linearGradient>
+            <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+          </defs>
+          <rect width="1600" height="1000" fill="url(#sky)"/>
+          <rect width="1600" height="1000" fill="url(#sun)"/>
+          <circle cx="230" cy="640" r="70" fill="#F6CD97" opacity=".55" filter="url(#soft)"/>
+          <circle cx="230" cy="640" r="34" fill="#F8D7A8"/>
+          <!-- far ridge -->
+          <path d="M0 650C160 628 330 612 520 628S880 664 1100 624S1450 584 1600 604V1000H0Z" fill="#2E1D12"/>
+          <path d="M0 650C160 628 330 612 520 628S880 664 1100 624S1450 584 1600 604" fill="none" stroke="url(#rim)" stroke-width="2"/>
+          <!-- middle hill with coffee rows -->
+          <path d="M0 728C250 690 450 708 700 698S1150 650 1350 676S1550 706 1600 698V1000H0Z" fill="#20150E"/>
+          <path d="M0 728C250 690 450 708 700 698S1150 650 1350 676S1550 706 1600 698" fill="none" stroke="url(#rim)" stroke-width="1.5" opacity=".7"/>
+          <g fill="none" stroke="#2F2016" stroke-linecap="round">
+            <path d="M0 752C250 714 450 732 700 722S1150 674 1350 700S1550 730 1600 722" stroke-width="5" stroke-dasharray="8 12"/>
+            <path d="M0 782C250 744 450 762 700 752S1150 704 1350 730S1550 760 1600 752" stroke-width="6" stroke-dasharray="10 14"/>
+            <path d="M0 818C250 780 450 798 700 788S1150 740 1350 766S1550 796 1600 788" stroke-width="8" stroke-dasharray="13 16"/>
+          </g>
+          <!-- near hill -->
+          <path d="M0 846C300 806 600 826 900 796S1400 786 1600 812V1000H0Z" fill="#170F0A"/>
+          <path d="M0 846C300 806 600 826 900 796S1400 786 1600 812" fill="none" stroke="url(#rim)" stroke-width="1.2" opacity=".5"/>
+          <g fill="none" stroke="#24180F" stroke-linecap="round">
+            <path d="M0 880C300 840 600 860 900 830S1400 820 1600 846" stroke-width="11" stroke-dasharray="18 20"/>
+            <path d="M0 930C300 890 600 910 900 880S1400 870 1600 896" stroke-width="15" stroke-dasharray="24 24"/>
+            <path d="M0 990C300 950 600 970 900 940S1400 930 1600 956" stroke-width="20" stroke-dasharray="30 28"/>
+          </g>
+          <rect width="1600" height="1000" fill="url(#shade)"/>
+        </svg>
+      </div>
+      <div class="light" aria-hidden="true"></div>
+
+      <div class="hero-inner wrap">
+        <h1 id="hero-title" data-hero>Coffee roasted the week you drink it.</h1>
+        <p class="lead" data-hero>Small-batch beans for home brewers. We roast every Monday, ship every Wednesday, and print the roast date on every bag.</p>
+        <div class="cta-row" data-hero>
+          <a class="btn btn-primary" href="#shop">Shop the beans</a>
+          <a class="btn btn-ghost" href="#subscribe">Start a subscription</a>
+        </div>
+
+        <div class="glass next-bag tilt sweep" data-hero aria-label="Example order card">
+          <div class="next-bag-head">
+            <strong>Your next bag</strong>
+            <span class="tag-illus">Illustrative</span>
+          </div>
+          <dl class="next-bag-grid">
+            <div><dt>Coffee</dt><dd>Ethiopia Guji, washed</dd></div>
+            <div><dt>Order by</dt><dd data-date="cutoff">Sun 11:59 pm</dd></div>
+            <div><dt>Roasted</dt><dd data-date="roast">Monday</dd></div>
+            <div><dt>Ships</dt><dd data-date="ship">Wednesday</dd></div>
+          </dl>
+          <div class="track" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div>
+          <div class="track-labels" aria-hidden="true"><span>Ordered</span><span>Roasting</span><span>Packed</span><span>Shipped</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section band-paper" aria-labelledby="problem-title">
+      <div class="wrap two-col">
+        <div data-reveal>
+          <h2 id="problem-title">Most coffee is old before you open it.</h2>
+          <p class="lead mute" style="margin-top:1.25rem">Roasted beans taste their best for a few weeks. Supermarket shelves do not run on that timetable.</p>
+        </div>
+        <ul class="cost-list rule-list" data-reveal-stagger>
+          <li>
+            <h3>No roast date on the bag</h3>
+            <p class="mute">A best-before date can be a year away. It tells you nothing about when the beans were roasted.</p>
+          </li>
+          <li>
+            <h3>Pre-ground goes flat</h3>
+            <p class="mute">Ground coffee loses its aroma much faster than whole beans. By the second week the cup tastes dull.</p>
+          </li>
+          <li>
+            <h3>Running out at the worst time</h3>
+            <p class="mute">You find the empty bag on a Monday morning. A subscription sends the next one before that happens.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop" class="section band-paper-2" aria-labelledby="shop-title">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <h2 id="shop-title">This week's coffee</h2>
+          <p class="lead mute">Four coffees, each in a 340 g bag. Choose whole bean or the grind for your brewer.</p>
+        </div>
+
+        <div class="products" data-reveal-stagger>
+          <article class="product" data-product data-id="long-table" data-name="Long Table house blend" data-price="18">
+            <div class="product-art">
+              <svg viewBox="0 0 160 220" role="img" aria-label="Kraft paper bag of Long Table house blend"><use href="#bag" style="--bag:#B08A5E;--bag-top:#9A774E;--label:#F3EEE6;--label-ink:#1D1712"/></svg>
+            </div>
+            <div>
+              <h3>Long Table</h3>
+              <p class="origin">House blend. Brazil and Colombia.</p>
+            </div>
+            <p class="notes">Milk chocolate, toasted almond, brown sugar. Built for espresso and milk drinks.</p>
+            <div class="product-foot">
+              <div class="price-row"><span class="price">$18</span><span class="unit">per 340 g bag</span></div>
+              <label class="field">Grind
+                <select data-grind>
+                  <option>Whole bean</option><option>Espresso</option><option>Filter</option><option>French press</option>
+                </select>
+              </label>
+              <button class="btn btn-dark" type="button" data-add>Add to cart</button>
+            </div>
+          </article>
+
+          <article class="product" data-product data-id="ethiopia-guji" data-name="Ethiopia Guji, washed" data-price="22">
+            <div class="product-art">
+              <svg viewBox="0 0 160 220" role="img" aria-label="Dark bag of Ethiopia Guji"><use href="#bag" style="--bag:#2F2A25;--bag-top:#24201C;--label:#E6BF91;--label-ink:#2A1A0A"/></svg>
+            </div>
+            <div>
+              <h3>Ethiopia Guji</h3>
+              <p class="origin">Single origin. Washed process.</p>
+            </div>
+            <p class="notes">Bergamot, peach, black tea. Light and bright. Best as pour-over or filter.</p>
+            <div class="product-foot">
+              <div class="price-row"><span class="price">$22</span><span class="unit">per 340 g bag</span></div>
+              <label class="field">Grind
+                <select data-grind>
+                  <option>Whole bean</option><option>Espresso</option><option>Filter</option><option>French press</option>
+                </select>
+              </label>
+              <button class="btn btn-dark" type="button" data-add>Add to cart</button>
+            </div>
+          </article>
+
+          <article class="product" data-product data-id="colombia-huila" data-name="Colombia Huila" data-price="20">
+            <div class="product-art">
+              <svg viewBox="0 0 160 220" role="img" aria-label="Deep red bag of Colombia Huila"><use href="#bag" style="--bag:#5A3127;--bag-top:#4A281F;--label:#F3EEE6;--label-ink:#1D1712"/></svg>
+            </div>
+            <div>
+              <h3>Colombia Huila</h3>
+              <p class="origin">Single origin. Washed process.</p>
+            </div>
+            <p class="notes">Red apple, caramel, cocoa. Sweet and balanced. Works in any brewer.</p>
+            <div class="product-foot">
+              <div class="price-row"><span class="price">$20</span><span class="unit">per 340 g bag</span></div>
+              <label class="field">Grind
+                <select data-grind>
+                  <option>Whole bean</option><option>Espresso</option><option>Filter</option><option>French press</option>
+                </select>
+              </label>
+              <button class="btn btn-dark" type="button" data-add>Add to cart</button>
+            </div>
+          </article>
+
+          <article class="product" data-product data-id="peru-decaf" data-name="Peru decaf, water process" data-price="19">
+            <div class="product-art">
+              <svg viewBox="0 0 160 220" role="img" aria-label="Green-grey bag of Peru decaf"><use href="#bag" style="--bag:#3E4842;--bag-top:#323B36;--label:#EAE2D5;--label-ink:#1D1712"/></svg>
+            </div>
+            <div>
+              <h3>Peru decaf</h3>
+              <p class="origin">Decaffeinated with water, no solvents.</p>
+            </div>
+            <p class="notes">Dark chocolate, walnut, raisin. For the evening cup.</p>
+            <div class="product-foot">
+              <div class="price-row"><span class="price">$19</span><span class="unit">per 340 g bag</span></div>
+              <label class="field">Grind
+                <select data-grind>
+                  <option>Whole bean</option><option>Espresso</option><option>Filter</option><option>French press</option>
+                </select>
+              </label>
+              <button class="btn btn-dark" type="button" data-add>Add to cart</button>
+            </div>
+          </article>
+        </div>
+        <p class="small mute" style="margin-top:1.25rem">Shipping is $6 on one-off orders under $45. Free on orders of $45 or more, and on every subscription.</p>
+      </div>
+    </section>
+
+    <!-- Roast week -->
+    <section id="roast-week" class="section band-dark grain" aria-labelledby="roast-title">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <h2 id="roast-title">One roast a week. Your bag is in it.</h2>
+          <p class="lead mute">We only roast what has been ordered, so nothing waits on a shelf.</p>
+        </div>
+        <div class="roast-grid">
+          <ol class="steps">
+            <li class="step is-active" data-step="0">
+              <h3>Order by Sunday night</h3>
+              <p>Anything ordered by 11:59 pm on Sunday goes into Monday's roast. Later orders join the next week.</p>
+            </li>
+            <li class="step" data-step="1">
+              <h3>We roast on Monday</h3>
+              <p>Small batches, one coffee at a time. Each batch is tasted before it is bagged.</p>
+            </li>
+            <li class="step" data-step="2">
+              <h3>Rest, grind and pack on Tuesday</h3>
+              <p>Beans rest for a day so the flavour settles. Ground orders are ground now, then sealed with the roast date on the label.</p>
+            </li>
+            <li class="step" data-step="3">
+              <h3>Shipped on Wednesday</h3>
+              <p>Every order leaves with tracking. You get an email with the link the same day.</p>
+            </li>
+            <li class="step" data-step="4">
+              <h3>Brew it at its best</h3>
+              <p>The coffee tastes best from about day 7 to day 30 after roasting. The label tells you where you are.</p>
+            </li>
+          </ol>
+
+          <div class="panel status-panel" aria-label="Example order status">
+            <div class="status-head">
+              <strong>Order status</strong>
+              <span class="tag-illus">Illustrative</span>
+            </div>
+            <ul class="status-list" data-status>
+              <li class="now"><span class="dot"></span><span>Order placed</span><span class="when" data-date="cutoff">Sunday</span></li>
+              <li><span class="dot"></span><span>Roasted</span><span class="when" data-date="roast">Monday</span></li>
+              <li><span class="dot"></span><span>Rested and packed</span><span class="when" data-date="pack">Tuesday</span></li>
+              <li><span class="dot"></span><span>Shipped with tracking</span><span class="when" data-date="ship">Wednesday</span></li>
+              <li><span class="dot"></span><span>In your cup</span><span class="when">Day 7 to 30</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscribe -->
+    <section id="subscribe" class="section band-paper" aria-labelledby="sub-title">
+      <div class="wrap two-col">
+        <div data-reveal>
+          <h2 id="sub-title">Never open an empty bag again.</h2>
+          <p class="lead mute" style="margin-top:1.25rem">Pick a coffee and how often you drink it. We roast and ship on the same weekly schedule. Every subscription bag is 10 percent off, and shipping is included.</p>
+          <table class="plan-table">
+            <thead>
+              <tr><th scope="col">Plan</th><th scope="col">Price per 340 g bag</th><th scope="col">Shipping</th><th scope="col">Changes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Plan">One-off order</td><td data-label="Price per bag">List price, $18 to $22</td><td data-label="Shipping">$6, free over $45</td><td data-label="Changes">Not needed</td></tr>
+              <tr><td data-label="Plan">Every 4 weeks</td><td data-label="Price per bag">10 percent off</td><td data-label="Shipping">Included</td><td data-label="Changes">Pause or cancel by email, no fee</td></tr>
+              <tr><td data-label="Plan">Every 2 weeks</td><td data-label="Price per bag">10 percent off</td><td data-label="Shipping">Included</td><td data-label="Changes">Pause or cancel by email, no fee</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <form class="glass builder" data-builder data-reveal aria-labelledby="builder-title">
+          <h3 id="builder-title">Build your subscription</h3>
+          <label class="field">Coffee
+            <select name="coffee">
+              <option value="roasters-choice" data-price="20" data-name="Roaster's choice">Roaster's choice, a new single origin each time ($20)</option>
+              <option value="long-table" data-price="18" data-name="Long Table house blend">Long Table house blend ($18)</option>
+              <option value="ethiopia-guji" data-price="22" data-name="Ethiopia Guji, washed">Ethiopia Guji, washed ($22)</option>
+              <option value="colombia-huila" data-price="20" data-name="Colombia Huila">Colombia Huila ($20)</option>
+              <option value="peru-decaf" data-price="19" data-name="Peru decaf, water process">Peru decaf, water process ($19)</option>
+            </select>
+          </label>
+          <fieldset class="seg">
+            <legend>How often</legend>
+            <label><input type="radio" name="freq" value="2" checked><span>Every 2 weeks<small>About a cup a day</small></span></label>
+            <label><input type="radio" name="freq" value="4"><span>Every 4 weeks<small>A few cups a week</small></span></label>
+          </fieldset>
+          <fieldset class="seg">
+            <legend>Bags per delivery</legend>
+            <label><input type="radio" name="bags" value="1" checked><span>1 bag<small>340 g</small></span></label>
+            <label><input type="radio" name="bags" value="2"><span>2 bags<small>680 g</small></span></label>
+          </fieldset>
+          <label class="field">Grind
+            <select name="grind">
+              <option>Whole bean</option><option>Espresso</option><option>Filter</option><option>French press</option>
+            </select>
+          </label>
+          <div class="summary" aria-live="polite">
+            <div><span class="mute">Per bag after 10 percent off</span><span data-sum="bag">$18.00</span></div>
+            <div><span class="mute">Shipping</span><span>Included</span></div>
+            <div><span class="mute">First roast</span><span data-date="roast">Monday</span></div>
+            <div class="total"><span>Per delivery</span><span data-sum="total">$18.00</span></div>
+          </div>
+          <button class="btn btn-primary" type="submit">Add subscription to cart</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- On the bag -->
+    <section class="section band-paper-2" aria-labelledby="label-title">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <h2 id="label-title">Everything you need is on the label.</h2>
+          <p class="lead mute">No guessing how old it is or how to brew it.</p>
+        </div>
+        <div class="label-wide" data-reveal>
+          <div class="label-art grain">
+            <div class="label-card" aria-label="Example bag label">
+              <div class="lc-brand">Lowfield Coffee</div>
+              <p class="lc-name">Ethiopia Guji</p>
+              <p class="small mute">Bergamot, peach, black tea</p>
+              <dl>
+                <dt>Process</dt><dd>Washed</dd>
+                <dt>Weight</dt><dd>340 g</dd>
+                <dt>Grind</dt><dd>Whole bean</dd>
+                <dt>Brew</dt><dd>15 g coffee to 250 ml water</dd>
+              </dl>
+              <div class="roasted"><span>Roasted</span><span data-date="roast-long">Monday</span></div>
+            </div>
+          </div>
+          <ul class="label-list rule-list">
+            <li><strong>Roast date</strong><p>The day it came out of the roaster. Not a best-before date.</p></li>
+            <li><strong>Origin</strong><p>Country and region for single origins. Every component for blends.</p></li>
+            <li><strong>Process</strong><p>Washed, natural or decaf method. It changes how the coffee tastes.</p></li>
+            <li><strong>Tasting notes</strong><p>What we taste when we cup it, in plain words.</p></li>
+            <li><strong>Brew ratio</strong><p>A starting recipe. Adjust to taste from there.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section band-paper" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <h2 id="faq-title">Questions</h2>
+        </div>
+        <div class="faq" data-reveal>
+          <details>
+            <summary>When will my coffee ship?</summary>
+            <p>We roast every Monday and ship every Wednesday with tracking. Orders placed by Sunday at 11:59 pm go into that Monday's roast. Anything later joins the following week.</p>
+          </details>
+          <details>
+            <summary>Should I buy whole bean or ground?</summary>
+            <p>Whole bean stays fresh longer. If you do not own a grinder, pick the grind for your brewer and we grind it on packing day, the day before it ships.</p>
+          </details>
+          <details>
+            <summary>How long does the coffee stay fresh?</summary>
+            <p>It tastes best between 7 and 30 days after the roast date printed on the bag. Keep it sealed in the bag, away from light and heat. The fridge is not a good place for it.</p>
+          </details>
+          <details>
+            <summary>Which coffee should I pick for espresso?</summary>
+            <p>Start with Long Table. It is roasted a little darker and holds up well with milk. Colombia Huila also makes a sweet espresso on its own.</p>
+          </details>
+          <details>
+            <summary>Can I pause or cancel a subscription?</summary>
+            <p>Yes, with no fee. Email hello@lowfield.example before the Sunday cut-off and we will skip or stop the next roast. A self-serve account page is coming soon.</p>
+          </details>
+          <details>
+            <summary>What if something is wrong with my order?</summary>
+            <p>Email us with your order number. If a bag arrives damaged or is not what you ordered, we will send a new one in the next roast.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section band-dark grain final" aria-labelledby="final-title">
+      <div class="light" aria-hidden="true"></div>
+      <div class="wrap" data-reveal>
+        <h2 id="final-title">The next roast is <span data-date="roast-long">Monday</span>.</h2>
+        <p class="lead">Order by Sunday at 11:59 pm and your coffee is in it.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#shop">Shop the beans</a>
+          <a class="btn btn-ghost" href="#subscribe">Start a subscription</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer band-dark">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="brand">Lowfield Coffee</p>
+          <p class="small mute" style="margin-top:.6rem;max-width:34ch">Small-batch coffee, roasted every Monday and shipped every Wednesday.</p>
+        </div>
+        <div>
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="#shop">Coffee beans</a></li>
+            <li><a href="#subscribe">Subscriptions</a></li>
+            <li><a href="#roast-week">Roast schedule</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Help</h3>
+          <ul>
+            <li><a href="#faq">Questions</a></li>
+            <li><a href="mailto:hello@lowfield.example">hello@lowfield.example</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="legal">&copy; <span data-year>2026</span> Lowfield Coffee. Prices in US dollars.</p>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="scrim" data-scrim></div>
+  <aside id="cart" class="drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" tabindex="-1">
+    <div class="drawer-head">
+      <h2 id="cart-title">Your cart</h2>
+      <button class="icon-btn" type="button" data-close-cart aria-label="Close cart">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body" data-cart-lines></div>
+    <div class="drawer-foot" data-cart-foot>
+      <div class="row"><span class="mute">Subtotal</span><span data-cart-subtotal>$0.00</span></div>
+      <div class="row"><span class="mute">Shipping</span><span data-cart-shipping>$0.00</span></div>
+      <div class="row total"><span>Total</span><span data-cart-total>$0.00</span></div>
+      <button class="btn btn-primary" type="button" disabled>Checkout coming soon</button>
+      <p class="drawer-note">Online payment is not connected yet. Your cart is saved on this device.</p>
+    </div>
+  </aside>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+  <script src="assets/motion.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>
